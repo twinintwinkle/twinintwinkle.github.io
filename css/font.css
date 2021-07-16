@@ -23,3 +23,8 @@ p.tiny {
 .black {
     color: #000000;
 }
+
+::selection {
+    color: #00FFF7;
+    background: transparent;
+}
