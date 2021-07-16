@@ -4,52 +4,84 @@
 	<title>Twinkle - Tiphanie Chong</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width = device-width, initial-scale=1.0">
-
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/font.css">
 	<link rel="stylesheet" href="./css/transition.css">
 	<link rel="shortcut icon" type="image/x-icon" href="./css/images/titlelogo.png">
 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
 </head>
 
 <body>
-	<div class="wrap">
-			<!-- About -->
-			<section id="about">
-				<div class="center">
-					<div class="tooltip"><span class="tooltiptext">Hello !</span>
-						<img src="./css/images/about_icon.png" width="270" height="270" style="display: block; margin-left: auto; margin-right: auto;" />
-					</div>
-						<br />
-						<p class="bigbold">Hello. I'm <span style="color:#BED400">Tiphanie Chong</span>.</p>
-						<p class="small">Sagittarius <span class="black">/ </span>26yro <span class="black">/ </span> Hong Kong</p>
-						<p class="tiny">"Dream as if you'll live forever, live as if you'll die today."</p>
-						<div id="contact">
-							<a href="mailto: cchongtingho@gmail.com"><img src="./css/images/toolbar_gmail.png" width="30" height="30" ;" /></a>
-							<a href="https://www.linkedin.com/in/tiphanie-chong-0940581b0/" target="_blank"><img src="./css/images/toolbar_linkedin.png" width="30" height="30" ;" /></a>
-						</div>
-					</div>
-			</section>
-
-			<!-- Skills -->
-			<section id="skills">
-				<p>123</p>
-			</section>
-
-			<!-- Education-->
-			<section id="education">
-				<p>234</p>
-			</section>
-
-			<!-- Experiences-->
-			<section id="experiences">
-				<p>345</p>
-			</section>
-
-
+	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #1B1A1C">
+		<a class="navbar-brand" href="./index.html"><img src="./css/images/titlelogo.png" width="30" height="30" style="display: block; margin-left: auto; margin-right: auto;" /></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarText">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="#about">About </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#skills">Skills </a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#education">Educations</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#experiences">Experiences</a>
+				</li>
+			</ul>
+			<span class="navbar-text" style="color: #00FFF7">
+				Showcase <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 12"><path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" /><path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" /></svg>
+				&ensp;
+			</span>
 		</div>
+	</nav>
+
+	<div class="wrap">
+
+		<div id="yellowbox"></div>
+		<!-- About -->
+		<section id="about">
+			<div class="center">
+				<span class="tooltiptext">Hello !</span><div ="tooltip"></div>
+				<img id="icon" src="./css/images/about_icon.png" width="270" height="270" style="display: block; margin-left: auto; margin-right: auto;" />
+				<br />
+				<p class="bigbold">Hello. I'm <span style="color:#BED400">Tiphanie Chong</span>.</p>
+				<p class="small">Sagittarius <span class="black">/ </span>26yro <span class="black">/ </span> Hong Kong</p>
+				<p class="tiny">"Dream as if you'll live forever, live as if you'll die today."</p>
+				<div id="contact">
+					<a href="mailto: cchongtingho@gmail.com"><img src="./css/images/toolbar_gmail.png" width="30" height="30" ;" /></a>
+					<a href="https://www.linkedin.com/in/tiphanie-chong-0940581b0/" target="_blank"><img src="./css/images/toolbar_linkedin.png" width="30" height="30" ;" /></a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Skills -->
+		<section id="skills">
+			<p>123</p>
+		</section>
+
+		<!-- Education-->
+		<section id="education">
+			<p>234</p>
+		</section>
+
+		<!-- Experiences-->
+		<section id="experiences">
+			<p>345</p>
+		</section>
+
+
 	</div>
 
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 </html>

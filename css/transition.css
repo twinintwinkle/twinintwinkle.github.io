@@ -1,14 +1,19 @@
-﻿img{
+﻿#icon{
     animation: transitionIn 0.75s;
     transition-timing-function: ease-in-out;
 }
 
-p, span {
-    animation: transitionIn 1.5s;
+p {
+    animation: transitionIn 0.95s;
     transition-timing-function: ease-in-out;
 }
 
-@keyframes transitionIn{
+#contact {
+    animation: transitionIn 1s;
+    transition-timing-function: ease-in-out;
+}
+
+@keyframes transitionIn {
     from{
         opacity: 0;
         transform: translateY(20px);
@@ -20,17 +25,12 @@ p, span {
     }
 }
 
+@keyframes transitionOut{
 
-.tooltip {
-    position: relative;
-    align-content: center;
-    margin: auto;
-    width: 20%;
 }
 
-    .tooltip .tooltiptext {
+   .tooltiptext {
         visibility: hidden;
-        width: 200px;
         color: #BED400;
         text-align: center;
         border-radius: 100px;
