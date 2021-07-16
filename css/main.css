@@ -6,6 +6,7 @@ body, html {
 
 body {
     overflow: hidden;
+    cursor: url(./images/cursor.png), auto;
 }
 
 div.wrap {
