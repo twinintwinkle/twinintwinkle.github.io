@@ -1,7 +1,7 @@
 body, html {
     height: 100%;
-    background-color: #312F33;
-    font-family:Arial, Helvetica, sans-serif
+    background-color: #7D7D7D;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 body {
@@ -14,10 +14,20 @@ div.wrap {
     overflow: hidden;
 }
 
+a, a:hover {
+    cursor: url(./images/cursor_hover.png), auto;
+    margin-right: 20px 
+}
+
+#contact{
+    margin:40px;
+}
+
 section {
     padding: 3em;
     height: 100vh;
     position: 100vh;
+    background-color: #312F33;
     box-sizing: border-box;
 }
 
@@ -28,7 +38,7 @@ div.center {
 }
 
 #about {
-    padding: 250px;
+    padding: 180px;
     margin: auto;
 }
 

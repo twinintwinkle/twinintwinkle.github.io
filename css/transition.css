@@ -1,9 +1,9 @@
-﻿img {
+﻿img{
     animation: transitionIn 0.75s;
     transition-timing-function: ease-in-out;
 }
 
-p {
+p, span {
     animation: transitionIn 1.5s;
     transition-timing-function: ease-in-out;
 }
