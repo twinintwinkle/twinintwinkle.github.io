@@ -23,6 +23,9 @@ p, span {
 
 .tooltip {
     position: relative;
+    align-content: center;
+    margin: auto;
+    width: 20%;
 }
 
     .tooltip .tooltiptext {
