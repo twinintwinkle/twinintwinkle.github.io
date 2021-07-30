@@ -20,6 +20,34 @@ p.tiny {
     letter-spacing: 3px;
 }
 
+.edu_year, .exp_year {
+    font-size: 14px;
+    color: #D0DB71;
+}
+.edu_programme, .exp_title {
+    font-size: 20px;
+    color: #D6D9B4;
+}
+.edu_school, .exp_company {
+    color: #959787;
+    letter-spacing: 2px;
+}
+
+.exp_year, .exp_title, .exp_company {
+    text-align: left;
+}
+
+.default {
+    font-size: 18px;
+    color: #C5C5C5;
+}
+
+.bold {
+    font-size: 18px;
+    color: #C5C5C5;
+    font-weight: bold;
+}
+
 .black {
     color: #000000;
 }
@@ -28,3 +56,10 @@ p.tiny {
     color: #00FFF7;
     background: transparent;
 }
+
+.section_title {
+    font-size: 18px;
+    color: #717171;
+    font-weight: bold;
+}
+

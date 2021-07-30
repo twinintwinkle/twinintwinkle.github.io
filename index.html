@@ -21,7 +21,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarText">
-			<ul class="navbar-nav mr-auto">
+			<ul class="navbar-nav mr-auto" style="margin: 5px;">
 				<li class="nav-item">
 					<a class="nav-link" href="#about">About </a>
 				</li>
@@ -34,51 +34,179 @@
 				<li class="nav-item">
 					<a class="nav-link" href="#experiences">Experiences</a>
 				</li>
+				<li>
+					<span class="navbar-text" style="color: #00FFF7">
+						Showcase <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 12"><path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" /><path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" /></svg>
+						&ensp;
+					</span>
+				</li>
 			</ul>
-			<span class="navbar-text" style="color: #00FFF7">
-				Showcase <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase-fill" viewBox="0 0 16 12"><path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z" /><path d="M0 12.5A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5V6.85L8.129 8.947a.5.5 0 0 1-.258 0L0 6.85v5.65z" /></svg>
-				&ensp;
-			</span>
+			<a href="mailto: cchongtingho@gmail.com"><img src="./css/images/toolbar_gmail.png" width="30" height="30" ;" /></a>
+			<a href="https://www.linkedin.com/in/tiphaniechong/" target="_blank"><img src="./css/images/toolbar_linkedin.png" width="30" height="30" ;" /></a>
 		</div>
 	</nav>
 
+
+	<div id="cover"></div>
 	<div class="wrap">
 
-		<div id="yellowbox"></div>
 		<!-- About -->
 		<section id="about">
 			<div class="center">
 				<span class="tooltiptext">Hello !</span><div ="tooltip"></div>
-				<img id="icon" src="./css/images/about_icon.png" width="270" height="270" style="display: block; margin-left: auto; margin-right: auto;" />
-				<br />
+				<img id="icon" src="./css/images/about_iconwithtext.png" style="display: block; margin-left: auto; margin-right: auto;" />
+				<br /><br />
 				<p class="bigbold">Hello. I'm <span style="color:#BED400">Tiphanie Chong</span>.</p>
 				<p class="small">Sagittarius <span class="black">/ </span>26yro <span class="black">/ </span> Hong Kong</p>
 				<p class="tiny">"Dream as if you'll live forever, live as if you'll die today."</p>
-				<div id="contact">
-					<a href="mailto: cchongtingho@gmail.com"><img src="./css/images/toolbar_gmail.png" width="30" height="30" ;" /></a>
-					<a href="https://www.linkedin.com/in/tiphaniechong/" target="_blank"><img src="./css/images/toolbar_linkedin.png" width="30" height="30" ;" /></a>
-				</div>
+				<br />
+				<a href="https://www.linkedin.com/in/tiphaniechong/" target="_blank" style="margin-right: 0px;">
+					<button type="button" class="btn btn-outline-secondary" id="cursor">&ensp;&ensp;&ensp;Download PDF Version Resume&ensp;&ensp;&ensp;</button>
+				</a>
 			</div>
+			<br />
+			<br />
 		</section>
 
 		<!-- Skills -->
 		<section id="skills">
-			<p>123</p>
+			<br />
+			<img id="icon" src="./css/images/skills_title.png" style="display: block; margin-left: auto; margin-right: auto;" />
+			<p class="section_title">· SKILLS ·</p>
+			<br />
+			<div id="rounded_rec">
+				<p class="small">Human Languages</p>
+				<div class="radial_container">
+					<div class="language" id="cantonese"></div>
+					<div class="language" id="mandarin"></div>
+					<div class="language" id="english"></div>
+				</div>
+				<div class="radial_container">
+					<div class="language" id="japanese"></div>
+					<div class="language" id="german"></div>
+				</div>
+
+				<hr />
+				<br />
+				<p class="small">Computer Languages</p>
+				<div class="radial_container">
+					<div class="language" id="html"></div>
+					<div class="language" id="css"></div>
+					<div class="language" id="java"></div>
+				</div>
+				<div class="radial_container">
+					<div class="language" id="python"></div>
+					<div class="language" id="c"></div>
+					<div class="language" id="javascript"></div>
+				</div>
+
+			</div>
+			<div id="rounded_rec">
+				<div id="skills_left">
+					<p class="default"><img id="icon" src="./css/images/skills_photoshop.png" style="margin-left: auto; margin-right: auto;" /> Adobe <span class="bold" style="color:#3acaff">Photoshop&ensp;&ensp;&ensp;</span></p>
+					<div class="bar photoshop expert" data-skill="AdobePhotoshop"></div>
+					<hr />
+					<p class="default"><img id="icon" src="./css/images/skills_ae.png" style="margin-left: auto; margin-right: auto;" /> Adobe <span class="bold" style="color:#9292f0">After Effects&ensp;&ensp;&ensp;</span></p>
+					<div class="bar aepr intermediate" data-skill="AdobeAfterEffects"></div>
+					<hr />
+					<p class="default"><img id="icon" src="./css/images/skills_pr.png" style="margin-left: auto; margin-right: auto;" /> Adobe <span class="bold" style="color:#9a9aff">Premiere Pro&ensp;&ensp;&ensp;</span></p>
+					<div class="bar aepr intermediate" data-skill="AdobePremierePro"></div>
+					<hr />
+					<p class="default"><img id="icon" src="./css/images/skills_xd.png" style="margin-left: auto; margin-right: auto;" /> Adobe <span class="bold" style="color:#f657f6">XD&ensp;&ensp;&ensp;</span></p>
+					<div class="bar xd expert" data-skill="AdobeXD"></div>
+					<hr />
+					<p class="default"><img id="icon" src="./css/images/skills_ai.png" style="margin-left: auto; margin-right: auto;" /> Adobe <span class="bold" style="color:#a6550c">Illustrator&ensp;&ensp;&ensp;</span></p>
+					<div class="bar ai advanced" data-skill="AdobeIllustrator"></div>
+					<hr />
+					<p class="default"><img id="icon" src="./css/images/skills_maya.png" style="margin-left: auto; margin-right: auto;" /> Autodesk <span class="bold" style="color:#90bdc6">Maya&ensp;&ensp;&ensp;</span></p>
+					<div class="bar maya learning" data-skill="AutodeskMaya"></div>
+				</div>
+			</div>
+			<br /><br />
 		</section>
 
 		<!-- Education-->
 		<section id="education">
-			<p>234</p>
+			<br />
+			<img id="icon" src="./css/images/edu_title.png" style="display: block; margin-left: auto; margin-right: auto;" />
+			<p class="section_title">· EDUCATION ·</p>
+			<div id="rounded_edu">
+				<div class="edu_year transition">2020 - 2021</div>
+				<div class="edu_programme transition">Postgraduate Diploma in Information Technology</div>
+				<p class="edu_school transition">HKU School of Professional and Continuing Education</p>
+				<br />
+				<hr />
+				<div class="edu_year transition">2021</div>
+				<div class="edu_programme transition">Certificate in CS50</div>
+				<p class="edu_school transition">Harvard University's introduction to the intellectual enterprises of computer science and the art of programming</p>
+				<br />
+				<hr />
+				<div class="edu_year transition">2012 - 2016</div>
+				<div class="edu_programme transition">Bachelor of Arts (Hons) in Language Studies</div>
+				<p class="edu_school transition">The Education University of Hong Kong</p>
+			</div>
 		</section>
 
 		<!-- Experiences-->
 		<section id="experiences">
-			<p>345</p>
-		</section>
+			<br /><br />
+			<img id="icon" src="./css/images/exp_title.png" style="display: block; margin-left: auto; margin-right: auto;" />
+			<p class="section_title">· EXPERIENCES ·</p>
+			<br />
+			<div class="exp_box">
+				<img class="exp_logo" src="./css/images/exp_madhead.png" />
+				<div class="exp_text">
+					<div class="exp_year transition">AUG 2020 - MAR 2021</div>
+					<div class="exp_title transition">Game Artist ( UI )</div>
+					<div class="exp_company transition">Madhead</div>
+				</div>
+			</div>
+			<hr class="white" />
+			<div class="exp_box">
+				<img class="exp_logo" src="./css/images/exp_iconic.png" />
+				<div class="exp_text">
+					<div class="exp_year transition">AUG 2019 - JUL 2020</div>
+					<div class="exp_title transition">Motion Graphic Designer, UI/UX Designer, Graphic Designer</div>
+					<p class="exp_company transition">Iconic Digital Marketing</p>
+				</div>
+			</div>
+			<hr class="white" />
+			<div class="exp_box">
+				<img class="exp_logo" src="./css/images/exp_wlb.png" />
+				<div class="exp_text">
+					<div class="exp_year transition">APR 2017 - MAY 2018</div>
+					<div class="exp_title transition">Financial Service Manager</div>
+					<p class="exp_company transition">CMB Wing Lung Bank</p>
+				</div>
+			</div>
+				<hr class="white" />
+				<div class="exp_box">
+					<img class="exp_logo" src="./css/images/exp_yoho.png" />
+					<div class="exp_text">
+						<div class="exp_year transition">AUG 2016 - FEB 2017</div>
+						<div class="exp_title transition">Graphic Design and Marketing Assistant</div>
+						<p class="exp_company transition">YOHO O2O Consumer Electronic Shop</p>
+					</div>
+				</div>
+</section>
+
+		<div id="footer">
+			<hr />
+			<a href="https://www.linkedin.com/in/tiphaniechong/" target="_blank" style="margin-right: 0px;">
+				<button type="button" class="btn btn-outline-info" id="cursor" style="width:80%;">View My Showcase</button>
+			</a>
+			<hr />
+			<a href="mailto: cchongtingho@gmail.com"><img src="./css/images/toolbar_gmail.png" width="30" height="30" ;" /></a>
+			<a href="https://www.linkedin.com/in/tiphaniechong/" target="_blank"><img src="./css/images/toolbar_linkedin.png" width="30" height="30" ;" />
+		</div>
 
 
 	</div>
 
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
+	<script src="./js/radialgraph.js"></script>
+	<script src="./js/radialgraph_spec.js"></script>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
