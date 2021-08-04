@@ -104,21 +104,21 @@ hr.white {
 }
 
 
-.showall_btn, .ui_btn, .motiongraphic_btn, .graphic_btn, .programming_btn, .others_btn{background-color: #4F4E51;}
-.showall_btn.active:hover{background-color: #67656B; }
+#showall_btn, #ui_btn, #motion_btn, #graphic_btn, #programming_btn, #others_btn{background-color: #4F4E51;}
+#showall_btn.active:hover{background-color: #67656B; }
 
-.ui_chip, .ui_btn.active {background-color: #6C859B;}
-.ui_btn.active:hover {background-color: #54728D;}
+.ui_chip, #ui_btn.active {background-color: #6C859B;}
+#ui_btn.active:hover {background-color: #54728D;}
 
-.motiongraphic_chip, .motiongraphic_btn.active {background-color: #568780;}
-.motiongraphic_btn.active:hover{background-color: #36776E;}
+.motiongraphic_chip, #motion_btn.active {background-color: #568780;}
+#motion_btn.active:hover{background-color: #36776E;}
 
-.graphic_chip, .graphic_btn.active {background-color: #BA887B;}
-.graphic_btn.active:hover{background-color: #B2705E;}
+.graphic_chip, #graphic_btn.active {background-color: #BA887B;}
+#graphic_btn.active:hover{background-color: #B2705E;}
 
-.programming_chip, .programming_btn.active {background-color: #848856;}
-.programming_btn.active:hover{background-color: #858B43;}
+.programming_chip, #programming_btn.active {background-color: #848856;}
+#programming_btn.active:hover{background-color: #858B43;}
 
-.others_chip, .others_btn.active {background-color: #885679;}
-.others_btn.active:hover{background-color: #813B6C;}
+.others_chip, #others_btn.active {background-color: #885679;}
+#others_btn.active:hover{background-color: #813B6C;}
 

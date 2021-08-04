@@ -1,62 +1,69 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var ui = 1, motionGraphic = 1, graphic = 1, programming = 1, others = 1;
+    var ui = 1, motion = 1, graphic = 1, programming = 1, others = 1;
 
-    document.querySelector('.ui_btn').onclick = btnClick(ui);
-
-    function btnClick(element) {
-
+    document.querySelector('#showall_btn').onclick = function () {
+        var btns = document.getElementsByClassName("filter_btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].classList.add("active");
+            ui = 1; motion = 1; graphic = 1; programming = 1; others = 1;
+        }
     }
 
-    document.querySelector('.ui_btn').onclick = function () {
-        if (ui = 1) {
+    document.querySelector('#ui_btn').onclick = function () {
+        var element = document.getElementById('ui_btn');
+        if (ui == 1) {
             ui = 0;
-            removeClass(ui);
+            element.classList.remove("active");
         } else {
             ui = 1;
-            addClass(ui);
-        }
-    }
-    document.querySelector('.motiongraphic_btn').onclick = function () {
-        if (motionGraphic = 1) {
-            motionGraphic = 0;
-            removeClass(motionGraphic);
-        } else {
-            motionGraphic = 1;
-            addClass(motionGraphic);
+            element.classList.add("active");
         }
     }
 
-    document.querySelector('.graphic_btn').onclick = function () {
-        if (graphic = 1) {
+    document.querySelector('#motion_btn').onclick = function () {
+        var element = document.getElementById('motion_btn');
+        if (motion == 1) {
+            motion = 0;
+            element.classList.remove("active");
+        } else {
+            motion = 1;
+            element.classList.add("active");
+        }
+    }
+
+    document.querySelector('#graphic_btn').onclick = function () {
+        var element = document.getElementById('graphic_btn');
+        if (graphic == 1) {
             graphic = 0;
-            removeClass(graphic);
+            element.classList.remove("active");
         } else {
             graphic = 1;
-            addClass(graphic);
+            element.classList.add("active");
         }
     }
 
-    document.querySelector('.programming_btn').onclick = function () {
-        if (programming = 1) {
+    document.querySelector('#programming_btn').onclick = function () {
+        var element = document.getElementById('programming_btn');
+        if (programming == 1) {
             programming = 0;
-            removeClass(programming);
+            element.classList.remove("active");
         } else {
             programming = 1;
-            addClass(programming);
+            element.classList.add("active");
         }
     }
 
-    document.querySelector('.others_btn').onclick = function () {
-        if (others = 1) {
+
+    document.querySelector('#others_btn').onclick = function () {
+        var element = document.getElementById('others_btn');
+        if (others == 1) {
             others = 0;
-            removeClass(others);
+            element.classList.remove("active");
         } else {
             others = 1;
-            addClass(others);
+            element.classList.add("active");
         }
     }
 
+});
 
-
-
-}
