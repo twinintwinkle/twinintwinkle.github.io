@@ -35,12 +35,6 @@ a, a:hover, #cursor {
     color: #FFF;
 }
 
-.ui_chip {background-color: #6C859B;}
-.motiongraphic_chip {background-color: #568780;}
-.graphic_chip {background-color: #BA887B;}
-.programming_chip {background-color: #848856;}
-.others_chip {background-color: #885679;}
-.showall_chip{background-color: #4F4E51; }
 
 .vertical {
     border-left: 1px solid #5C5A5E;
@@ -61,7 +55,10 @@ hr.white {
     margin: 30px;
     height: 400px;
     vertical-align: middle;
+    transition: all .2s ease-in-out;
 }
+
+.card:hover{ transform: scale(1.05);}
 
 .card_small {
     font-size: 14px;
@@ -83,3 +80,45 @@ hr.white {
     ::-webkit-scrollbar-thumb:hover {
         background: #ccc;
     }
+
+
+.filter_btn {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: url(./images/cursor_hover.png), auto;
+    border-radius: 5px;
+    padding: 3px 15px;
+    margin: 7px;
+    font-size: 14px;
+    color: #FFF;
+    background-color: #3F3D41;
+}
+
+.filter_btn:hover{
+    background-color: #7E7E7E;
+}
+
+
+.showall_btn, .ui_btn, .motiongraphic_btn, .graphic_btn, .programming_btn, .others_btn{background-color: #4F4E51;}
+.showall_btn.active:hover{background-color: #67656B; }
+
+.ui_chip, .ui_btn.active {background-color: #6C859B;}
+.ui_btn.active:hover {background-color: #54728D;}
+
+.motiongraphic_chip, .motiongraphic_btn.active {background-color: #568780;}
+.motiongraphic_btn.active:hover{background-color: #36776E;}
+
+.graphic_chip, .graphic_btn.active {background-color: #BA887B;}
+.graphic_btn.active:hover{background-color: #B2705E;}
+
+.programming_chip, .programming_btn.active {background-color: #848856;}
+.programming_btn.active:hover{background-color: #858B43;}
+
+.others_chip, .others_btn.active {background-color: #885679;}
+.others_btn.active:hover{background-color: #813B6C;}
+
