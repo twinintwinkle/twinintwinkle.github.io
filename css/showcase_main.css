@@ -1,0 +1,85 @@
+﻿body, html {
+    background-color: #1B1A1C;
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    cursor: url(./images/cursor.png), auto;
+}
+
+a, a:hover, #cursor {
+    cursor: url(./images/cursor_hover.png), auto;
+}
+
+.container {
+    padding-top: 30px;
+    background: #1B1A1C;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
+
+.chip {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 3px 15px;
+    margin:5px;
+}
+
+.chip_content {
+    font-size: 14px;
+    color: #FFF;
+}
+
+.ui_chip {background-color: #6C859B;}
+.motiongraphic_chip {background-color: #568780;}
+.graphic_chip {background-color: #BA887B;}
+.programming_chip {background-color: #848856;}
+.others_chip {background-color: #885679;}
+.showall_chip{background-color: #4F4E51; }
+
+.vertical {
+    border-left: 1px solid #5C5A5E;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    margin:10px;
+}
+
+hr.white {
+    width: 60%;
+    border-top: 1px dotted #707070;
+}
+
+.card {
+    display: inline-block;
+    margin: 30px;
+    height: 400px;
+    vertical-align: middle;
+}
+
+.card_small {
+    font-size: 14px;
+    color: #888888;
+}
+
+
+/*scroll bar*/
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 0px;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #ccc;
+    }
