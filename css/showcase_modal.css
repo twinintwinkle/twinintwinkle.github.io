@@ -4,18 +4,23 @@ body.modal-open{
     overflow: hidden;
 }
 
+iframe, .modal, .modal-content {
+    cursor: url(./images/cursor.png), auto;
+}
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding: 100px; /* Location of the box */
+    padding-top: 100px;
+    padding-bottom: 50px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
     height: 100vh;
     overflow: auto;
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
 }
 
 .is-blurred {
@@ -26,59 +31,100 @@ body.modal-open{
 /* Modal Content */
 .modal-content {
     position: relative;
-    background-color: #575757;
     margin: auto;
-    width: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    width: 90%;
+    max-width: 900px;
+    background-color: transparent;
+    border: none;
+}
+
+.hideModal {
+    animation: animateup .25s;
+    -webkit-animation: animateup .25s;
+    transform: scale(0);
+}
+
+.showModal {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
 }
 
 /* Add Animation */
 @-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
+    from { top: -300px;opacity: 0}
+    to {top: 0;opacity: 1}
 }
-
 @keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
+    from {top: -300px;opacity: 0}
+    to {top: 0;opacity: 1}
 }
+
+@-webkit-keyframes animateup {
+    from { top: 0;opacity: 1}
+    to {top: -300px;opacity: 0}
+}
+@keyframes animateup {
+    from {top: 0;opacity: 1}
+    to {top: -300px;opacity: 0}
+}
+
+@keyframes fadeIn {
+    0% {background: rgba(0,0,0,.0);}
+    100% {background: rgba(0,0,0,.7);}
+}
+
+@keyframes fadeOut {
+    0% {background: rgba(0,0,0,.7);}
+    100% {background: rgba(0,0,0,.0);}
+}
+
+@keyframes scaleUp {
+    0% {transform: scale(.8) translateY(1000px);opacity: 0;}
+    100% {transform: scale(1) translateY(0px);opacity: 1;}
+}
+
+@keyframes scaleDown {
+    0% {transform: scale(1) translateY(0px);opacity: 1;}
+    100% {transform: scale(.8) translateY(1000px);opacity: 0;}
+}
+
+@keyframes scaleBack {
+    0% {transform: scale(1);}
+    100% {transform: scale(.85);}
+}
+
+@keyframes scaleForward {
+    0% {transform: scale(.85);}
+    100% {transform: scale(1);}
+}
+
+@keyframes quickScaleDown {
+    0% {transform: scale(1);}
+    99.9% {transform: scale(1);}
+    100% {transform: scale(0);}
+}
+
 
 /* The Close Button */
 .close {
+    display: block;
     color: white;
     float: right;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
-    cursor: url(./images/cursor_hover.png), auto;
 }
 
-    .close:hover,
-    .close:focus {
+.close:hover,.close:focus {
         color: #fff;
         text-decoration: none;
+        outline: none;
         cursor: url(./images/cursor_hover.png), auto;
     }
 
 .modal-header {
-    padding: 3px 15px;
+    padding: 1px 25px;
     color: white;
+    border: none;
 }
-

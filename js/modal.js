@@ -21,7 +21,6 @@ for (var i = 0; i < btn.length; i++) {
     }
 }
 
-
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
     modal.style.display = "none";
@@ -41,3 +40,8 @@ window.onclick = function (event) {
         }
     }
 }// JavaScript source code
+
+
+
+
+   

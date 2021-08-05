@@ -7,7 +7,7 @@ body, html {
     scroll-behavior: smooth;
 }
 
-body {
+body{
     cursor: url(./images/cursor.png), auto;
 }
 
@@ -20,8 +20,8 @@ a, a:hover, #cursor {
     margin-right: 20px;
 }
 
-#contact{
-    margin:40px;
+#contact {
+    margin: 40px;
 }
 
 section{
