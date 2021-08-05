@@ -10,11 +10,13 @@ var span = document.getElementsByClassName("close")[0];
 var container = document.getElementsByClassName('container');
 // When the user clicks the button, open the modal 
 
+
 for (var i = 0; i < btn.length; i++) {
     btn[i].onclick = function () {
         modal.style.display = "block";
         for (var j = 0; j < container.length; j++) {
             container[j].classList.add("is-blurred");
+            document.getElementById("body").classList.add("modal-open");
         }
     }
 }
@@ -25,6 +27,7 @@ span.onclick = function () {
     modal.style.display = "none";
     for (var i = 0; i < container.length; i++) {
         container[i].classList.remove("is-blurred");
+        document.getElementById("body").classList.remove("modal-open");
     }
 }
 
@@ -34,6 +37,7 @@ window.onclick = function (event) {
         modal.style.display = "none";
         for (var i = 0; i < container.length; i++) {
             container[i].classList.remove("is-blurred");
+            document.getElementById("body").classList.remove("modal-open");
         }
     }
 }// JavaScript source code
