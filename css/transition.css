@@ -3,7 +3,7 @@
     transition-timing-function: ease-in-out;
 }
 
-p, .transition {
+p, .transition, .card {
     animation: transitionIn 0.95s;
     transition-timing-function: ease-in-out;
 }
