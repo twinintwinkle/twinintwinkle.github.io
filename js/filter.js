@@ -1,11 +1,12 @@
+var ui = 1, motion = 1, graphic = 1, programming = 1, others = 1;
+
 document.addEventListener('DOMContentLoaded', function () {
-    var ui = 1, motion = 1, graphic = 1, programming = 1, others = 1;
 
     document.querySelector('#showall_btn').onclick = function () {
         var btns = document.getElementsByClassName("filter_btn");
+        ui = 1; motion = 1; graphic = 1; programming = 1; others = 1;
         for (var i = 0; i < btns.length; i++) {
             btns[i].classList.add("active");
-            ui = 1; motion = 1; graphic = 1; programming = 1; others = 1;
         }
     }
 
@@ -53,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
     document.querySelector('#others_btn').onclick = function () {
         var element = document.getElementById('others_btn');
         if (others == 1) {
@@ -65,5 +65,75 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    document.querySelectorAll('.filter_btn').forEach(item => {
+        item.addEventListener('click', check);
+    })
+   
+
 });
+
+function check() {
+    if (ui == 0) {
+        var hide = document.getElementsByClassName('uiux');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.add("filterDiv");
+        }
+    }
+    if (motion == 0) {
+        var hide = document.getElementsByClassName('motiongraphic');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.add("filterDiv");
+        }
+    }
+    if (graphic == 0) {
+        var hide = document.getElementsByClassName('graphic');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.add("filterDiv");
+        }
+    }
+    if (programming == 0) {
+        var hide = document.getElementsByClassName('programming');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.add("filterDiv");
+        }
+    }
+    if (others == 0) {
+        var hide = document.getElementsByClassName('others');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.add("filterDiv");
+        }
+    }
+
+    if (ui == 1) {
+        var hide = document.getElementsByClassName('uiux');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.remove("filterDiv");
+        }
+    }
+    if (motion == 1) {
+        var hide = document.getElementsByClassName('motiongraphic');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.remove("filterDiv");
+        }
+    }
+    if (graphic == 1) {
+        var hide = document.getElementsByClassName('graphic');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.remove("filterDiv");
+        }
+    }
+    if (programming == 1) {
+        var hide = document.getElementsByClassName('programming');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.remove("filterDiv");
+        }
+    }
+    if (others == 1) {
+        var hide = document.getElementsByClassName('others');
+        for (var i = 0; i < hide.length; i++) {
+            hide[i].classList.remove("filterDiv");
+        }
+    }
+
+}
 

@@ -60,6 +60,10 @@ hr.white {
 
 .card:hover{ transform: scale(1.05);}
 
+.filterDiv{
+    display: none;
+}
+
 .card_small {
     font-size: 14px;
     color: #888888;
