@@ -4,7 +4,7 @@ body.modal-open{
     overflow: hidden;
 }
 
-iframe, .modal, .modal-content {
+iframe, .modal {
     cursor: url(./images/cursor.png), auto;
 }
 
@@ -36,12 +36,14 @@ iframe, .modal, .modal-content {
     max-width: 900px;
     background-color: transparent;
     border: none;
+
 }
 
 .hideModal {
-    animation: animateup .25s;
-    -webkit-animation: animateup .25s;
-    transform: scale(0);
+    -webkit-animation-name: animateup;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animateup;
+    animation-duration: 0.4s;
 }
 
 .showModal {
@@ -68,42 +70,6 @@ iframe, .modal, .modal-content {
 @keyframes animateup {
     from {top: 0;opacity: 1}
     to {top: -300px;opacity: 0}
-}
-
-@keyframes fadeIn {
-    0% {background: rgba(0,0,0,.0);}
-    100% {background: rgba(0,0,0,.7);}
-}
-
-@keyframes fadeOut {
-    0% {background: rgba(0,0,0,.7);}
-    100% {background: rgba(0,0,0,.0);}
-}
-
-@keyframes scaleUp {
-    0% {transform: scale(.8) translateY(1000px);opacity: 0;}
-    100% {transform: scale(1) translateY(0px);opacity: 1;}
-}
-
-@keyframes scaleDown {
-    0% {transform: scale(1) translateY(0px);opacity: 1;}
-    100% {transform: scale(.8) translateY(1000px);opacity: 0;}
-}
-
-@keyframes scaleBack {
-    0% {transform: scale(1);}
-    100% {transform: scale(.85);}
-}
-
-@keyframes scaleForward {
-    0% {transform: scale(.85);}
-    100% {transform: scale(1);}
-}
-
-@keyframes quickScaleDown {
-    0% {transform: scale(1);}
-    99.9% {transform: scale(1);}
-    100% {transform: scale(0);}
 }
 
 

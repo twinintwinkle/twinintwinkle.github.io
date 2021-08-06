@@ -1,67 +1,56 @@
-var ui = 1, motion = 1, graphic = 1, programming = 1, others = 1;
+var filterCheck = {
+    uiux: true,
+    motiongraphic: true,
+    graphic: true,
+    programming: true,
+    others: true
+};
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    document.querySelector('#showall_btn').onclick = function () {
-        var btns = document.getElementsByClassName("filter_btn");
-        ui = 1; motion = 1; graphic = 1; programming = 1; others = 1;
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].classList.add("active");
+    var showallbtn = document.getElementById('showall_btn');
+    if (showallbtn) {
+        showallbtn.onclick = function () {
+            var btns = document.getElementsByClassName("filter_btn");
+            filterCheck.uiux = true, filterCheck.motiongraphic = true, filterCheck.grphic = true, filterCheck.programming = true, filterCheck.others = true;
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.add("active");
+            }
         }
     }
 
-    document.querySelector('#ui_btn').onclick = function () {
-        var element = document.getElementById('ui_btn');
-        if (ui == 1) {
-            ui = 0;
-            element.classList.remove("active");
-        } else {
-            ui = 1;
-            element.classList.add("active");
+    var uibtn = document.getElementById('ui_btn');
+    if (uibtn) {
+        uibtn.onclick = function () {
+            filterCheck.uiux = change(uibtn, "uiux");
         }
     }
 
-    document.querySelector('#motion_btn').onclick = function () {
-        var element = document.getElementById('motion_btn');
-        if (motion == 1) {
-            motion = 0;
-            element.classList.remove("active");
-        } else {
-            motion = 1;
-            element.classList.add("active");
+    var motionbtn = document.getElementById('motion_btn');
+    if (motionbtn) {
+        motionbtn.onclick = function () {
+            filterCheck.motiongraphic = change(motionbtn, "motiongraphic");
         }
     }
 
-    document.querySelector('#graphic_btn').onclick = function () {
-        var element = document.getElementById('graphic_btn');
-        if (graphic == 1) {
-            graphic = 0;
-            element.classList.remove("active");
-        } else {
-            graphic = 1;
-            element.classList.add("active");
+    var graphicbtn = document.getElementById('graphic_btn');
+    if (graphicbtn) {
+        graphicbtn.onclick = function () {
+            filterCheck.graphic = change(graphicbtn, "graphic");
         }
     }
 
-    document.querySelector('#programming_btn').onclick = function () {
-        var element = document.getElementById('programming_btn');
-        if (programming == 1) {
-            programming = 0;
-            element.classList.remove("active");
-        } else {
-            programming = 1;
-            element.classList.add("active");
+    var programmingbtn = document.getElementById('programming_btn');
+    if (programmingbtn) {
+        programmingbtn.onclick = function () {
+            filterCheck.programming = change(programmingbtn, "programming");
         }
     }
 
-    document.querySelector('#others_btn').onclick = function () {
-        var element = document.getElementById('others_btn');
-        if (others == 1) {
-            others = 0;
-            element.classList.remove("active");
-        } else {
-            others = 1;
-            element.classList.add("active");
+    var othersbtn = document.getElementById('others_btn');
+    if (othersbtn) {
+        othersbtn.onclick = function () {
+            filterCheck.others = change(othersbtn, "others");
         }
     }
 
@@ -72,68 +61,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-function check() {
-    if (ui == 0) {
-        var hide = document.getElementsByClassName('uiux');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.add("filterDiv");
-        }
-    }
-    if (motion == 0) {
-        var hide = document.getElementsByClassName('motiongraphic');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.add("filterDiv");
-        }
-    }
-    if (graphic == 0) {
-        var hide = document.getElementsByClassName('graphic');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.add("filterDiv");
-        }
-    }
-    if (programming == 0) {
-        var hide = document.getElementsByClassName('programming');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.add("filterDiv");
-        }
-    }
-    if (others == 0) {
-        var hide = document.getElementsByClassName('others');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.add("filterDiv");
-        }
-    }
 
-    if (ui == 1) {
-        var hide = document.getElementsByClassName('uiux');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.remove("filterDiv");
-        }
-    }
-    if (motion == 1) {
-        var hide = document.getElementsByClassName('motiongraphic');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.remove("filterDiv");
-        }
-    }
-    if (graphic == 1) {
-        var hide = document.getElementsByClassName('graphic');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.remove("filterDiv");
-        }
-    }
-    if (programming == 1) {
-        var hide = document.getElementsByClassName('programming');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.remove("filterDiv");
-        }
-    }
-    if (others == 1) {
-        var hide = document.getElementsByClassName('others');
-        for (var i = 0; i < hide.length; i++) {
-            hide[i].classList.remove("filterDiv");
-        }
-    }
 
+function change(btn, element) {
+    var element_value = eval("filterCheck." + element);
+    if (element_value == true) {
+        element_value = false;
+        btn.classList.remove("active");
+    } else {
+        element_value = true;
+        btn.classList.add("active");
+    }
+    return element_value;
 }
+
+function check() {
+    for (const [key, value] of Object.entries(filterCheck)) {
+        if (value == false) {
+            checkFalse(key);
+        }
+    }
+    for (const [key, value] of Object.entries(filterCheck)) {
+        if (value == true) {
+            checkTrue(key);
+        }
+    }
+}
+
+function checkFalse(element) {
+    var hide = document.getElementsByClassName(element);
+    for (var i = 0; i < hide.length; i++) {
+        hide[i].classList.add("filterDiv");
+    }
+}
+
+function checkTrue(element) {
+    var show = document.getElementsByClassName(element);
+    for (var i = 0; i < show.length; i++) {
+        show[i].classList.remove("filterDiv");
+    }
+}
+
+
 

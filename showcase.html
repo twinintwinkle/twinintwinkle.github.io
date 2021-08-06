@@ -6,11 +6,19 @@
     <meta name="viewport" content="width = device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="./css/showcase_main.css">
-    <link rel="stylesheet" href="./css/showcase_modal.css">
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/transition.css">
+    <link rel="stylesheet" href="./css/showcase_main.css">
+    <link rel="stylesheet" href="./css/showcase_modal.css">
     <link rel="shortcut icon" type="image/x-icon" href="./css/images/titlelogo.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
+    <script src="./js/filter.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 
 <body id="body">
@@ -39,20 +47,19 @@
         </button>
     </div>
     <br />
-    <hr class="white" />
+    <hr />
 
     <!-- The Modal-->
     <div id="myModal" class="modal">
         <div class="modal-content" id="modal_transition">
             <div class="modal-header">
                 <p id="modal_title"></p>
-                <span class="close">&times;</span>
-                </div>
+                <span class="close" id="close_btn">&times;</span>
+            </div>
             <div class="modal-body">
-                <iframe src="./showcase/secura.html" frameborder="0" height="600px" width="100%"></iframe>
+                <iframe id="iframe"src="./showcase/secura.html" frameborder="0" height="600px" width="100%"></iframe>
             </div>
         </div>
-
     </div>
 
 
@@ -60,8 +67,8 @@
 
     <div class="container shocase_container">
         <!-- Secura-->
-        <button class="card_btn" id="secura">
-            <div class="card uiux others" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux others" id="secura">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/secura/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">(Se)cura</div>
@@ -86,8 +93,8 @@
         </button>
 
         <!-- TODAYDOIDEAS-->
-        <button class="card_btn" id="todaydoideas">
-            <div class="card programming" style="width: 18rem; text-align:left;">
+        <button class="card_btn programming" id="todaydoideas">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/todaydoideas/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">TO - Day Do Ideas</div>
@@ -108,8 +115,8 @@
         </button>
 
         <!-- Mark6Lottery-->
-        <button class="card_btn">
-            <div class="card programming others" style="width: 18rem; text-align:left;">
+        <button class="card_btn programming others">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/marksixlottery/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Mark Six Lottery Program</div>
@@ -126,8 +133,8 @@
 
 
         <!-- TOS-->
-        <button class="card_btn">
-            <div class="card uiux" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/tos/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Alliance War / Chain Battles...</div>
@@ -143,8 +150,8 @@
         </button>
 
         <!-- Space Catering-->
-        <button class="card_btn">
-            <div class="card programming" style="width: 18rem; text-align:left;">
+        <button class="card_btn programming">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/spaceCatering/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Space Catering</div>
@@ -160,8 +167,8 @@
         </button>
 
         <!-- Donation Website-->
-        <button class="card_btn">
-            <div class="card uiux others" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux others">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/donationwebsite/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Donation Website</div>
@@ -184,8 +191,8 @@
 
 
         <!-- MSG-->
-        <button class="card_btn">
-            <div class="card uiux motiongraphic graphic" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux motiongraphic graphic">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/msg/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Master Select Group</div>
@@ -210,8 +217,8 @@
         </button>
 
         <!--ST MORSE-->
-        <button class="card_btn">
-            <div class="card uiux graphic" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux graphic">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/stMorseCapital/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">ST.Morse Capital</div>
@@ -232,8 +239,8 @@
         </button>
 
         <!-- Onederful-->
-        <button class="card_btn">
-            <div class="card others" style="width: 18rem; text-align:left;">
+        <button class="card_btn others">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/onederful/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Onederful Enterprise Development LTD</div>
@@ -249,8 +256,8 @@
 
 
         <!--Iconic-->
-        <button class="card_btn">
-            <div class="card motiongraphic graphic" style="width: 18rem; text-align:left;">
+        <button class="card_btn motiongraphic graphic">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/iconic/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Iconic Digital Marketing LTD</div>
@@ -270,8 +277,8 @@
         </button>
 
         <!-- Wall Street Online-->
-        <button class="card_btn">
-            <div class="card uiux others" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux others">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/wallstreetonline/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Wall Street Online Investment Institute</div>
@@ -291,8 +298,8 @@
         </button>
 
         <!-- Ho Man-->
-        <button class="card_btn">
-            <div class="card others" style="width: 18rem; text-align:left;">
+        <button class="card_btn others">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/homan/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Ho Man E-Commerce LTD</div>
@@ -307,8 +314,8 @@
         </button>
 
         <!-- avg163-->
-        <button class="card_btn">
-            <div class="card uiux" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/avg163_competetion/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Blooming Time,  Icy Summer</div>
@@ -324,8 +331,8 @@
 
 
         <!--last battery-->
-        <button class="card_btn">
-            <div class="card uiux motiongraphic others" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux motiongraphic others">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/theLastBattery/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">The Last Battery</div>
@@ -356,8 +363,8 @@
 
 
         <!--rule the world-->
-        <button class="card_btn">
-            <div class="card uiux" style="width: 18rem; text-align:left;">
+        <button class="card_btn uiux">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/ruleTheWorld/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">Rule The World</div>
@@ -377,8 +384,8 @@
         </button>
 
         <!--日常欺師滅祖-->
-        <button class="card_btn">
-            <div class="card   motiongraphic" style="width: 18rem; text-align:left;">
+        <button class="card_btn motiongraphic">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/onmyoji/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">日常欺師滅祖</div>
@@ -393,8 +400,8 @@
         </button>
 
         <!--YOHO O2O-->
-        <button class="card_btn">
-            <div class="card   motiongraphic graphic others" style="width: 18rem; text-align:left;">
+        <button class="card_btn motiongraphic graphic others">
+            <div class="card" style="width: 18rem; text-align:left;">
                 <img class="card-img-top" src="./css/images/showcase/yohoo2o/cover.jpg">
                 <div class="card-body">
                     <div class="card-text">YOHO O2O</div>
@@ -433,19 +440,6 @@
 
 
 
-
-
-
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.js"></script>
-    <script src="./js/filter.js"></script>
-    <script src="./js/modal.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    
 </body>
 </html>
