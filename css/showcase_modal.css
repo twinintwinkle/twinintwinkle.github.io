@@ -1,6 +1,4 @@
-﻿/* The Modal (background) */
-
-body.modal-open{
+﻿body.modal-open{
     overflow: hidden;
 }
 
@@ -20,19 +18,19 @@ iframe, .modal {
     height: 100vh;
     overflow: auto;
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+    background-color: rgba(255,255,255,0.2); /* Black w/ opacity */
 }
 
 .is-blurred {
-    filter: blur(20px);
-    -webkit-filter: blur(20px);
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
 }
 
 /* Modal Content */
 .modal-content {
     position: relative;
     margin: auto;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     background-color: transparent;
     border: none;
