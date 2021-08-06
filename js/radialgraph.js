@@ -2,17 +2,17 @@
 
 var d3;
 
-// RadialProgressChart object
+
 function RadialProgressChart(query, options) {
 
-    // verify d3 is loaded
+
     d3 = (typeof window !== 'undefined' && window.d3) ? window.d3 : typeof require !== 'undefined' ? require("d3") : undefined;
     if (!d3) throw new Error('d3 object is missing. D3.js library has to be loaded before.');
 
     var self = this;
     self.options = RadialProgressChart.normalizeOptions(options);
 
-    // internal  variables
+
     var series = self.options.series
         , width = 15 + ((self.options.diameter / 2) + (self.options.stroke.width * self.options.series.length) + (self.options.stroke.gap * self.options.series.length - 1)) * 2
         , height = width
@@ -25,7 +25,7 @@ function RadialProgressChart(query, options) {
         var radius = inner[item.index];
         if (radius) return radius;
 
-        // first ring based on diameter and the rest based on the previous outer radius plus gap
+    
         radius = item.index === 0 ? self.options.diameter / 2 : outer[item.index - 1] + self.options.stroke.gap;
         inner[item.index] = radius;
         return radius;
@@ -35,7 +35,7 @@ function RadialProgressChart(query, options) {
         var radius = outer[item.index];
         if (radius) return radius;
 
-        // based on the previous inner radius + stroke width
+
         radius = inner[item.index] + self.options.stroke.width;
         outer[item.index] = radius;
         return radius;
@@ -49,8 +49,6 @@ function RadialProgressChart(query, options) {
         .innerRadius(innerRadius)
         .outerRadius(outerRadius)
         .cornerRadius(function (d) {
-            // Workaround for d3 bug https://github.com/mbostock/d3/issues/2249
-            // Reduce corner radius when corners are close each other
             var m = d.percentage >= 90 ? (100 - d.percentage) * 0.1 : 1;
             return (self.options.stroke.width / 2) * m;
         });
@@ -61,14 +59,12 @@ function RadialProgressChart(query, options) {
         .innerRadius(innerRadius)
         .outerRadius(outerRadius);
 
-    // create svg
     self.svg = d3.select(query).append("svg")
         .attr("preserveAspectRatio", "xMinYMin meet")
         .attr("viewBox", dim)
         .append("g")
         .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-    // add gradients defs
     var defs = self.svg.append("svg:defs");
     series.forEach(function (item) {
         if (item.color.linearGradient || item.color.radialGradient) {
@@ -77,7 +73,6 @@ function RadialProgressChart(query, options) {
         }
     });
 
-    // add shadows defs
     defs = self.svg.append("svg:defs");
     var dropshadowId = "dropshadow-" + Math.random();
     var filter = defs.append("filter").attr("id", dropshadowId);
@@ -99,7 +94,7 @@ function RadialProgressChart(query, options) {
     feMerge.append("feMergeNode").attr("in", "offsetBlur");
     feMerge.append("feMergeNode").attr("in", "SourceGraphic");
 
-    // add inner text
+
     if (self.options.center) {
         self.svg.append("text")
             .attr('class', 'rbc-center-text')
@@ -111,7 +106,7 @@ function RadialProgressChart(query, options) {
             .append('tspan')
             .attr("dominant-baseline", function () {
 
-                // Single lines can easily centered in the middle using dominant-baseline, multiline need to use y
+
                 if (self.options.center.content.length === 1) {
                     return 'central';
                 }
@@ -139,7 +134,7 @@ function RadialProgressChart(query, options) {
             });
     }
 
-    // add ring structure
+
     self.field = self.svg.selectAll("g")
         .data(series)
         .enter().append("g");
@@ -171,18 +166,11 @@ function RadialProgressChart(query, options) {
     self.update();
 }
 
-/**
- * Update data to be visualized in the chart.
- *
- * @param {Object|Array} data Optional data you'd like to set for the chart before it will update. If not specified the update method will use the data that is already configured with the chart.
- * @example update([70, 10, 45])
- * @example update({series: [{value: 70}, 10, 45]})
- *
- */
+
 RadialProgressChart.prototype.update = function (data) {
     var self = this;
 
-    // parse new data
+
     if (data) {
         if (typeof data === 'number') {
             data = [data];
@@ -208,7 +196,6 @@ RadialProgressChart.prototype.update = function (data) {
         }
     }
 
-    // calculate from percentage and new percentage for the progress animation
     self.options.series.forEach(function (item) {
         item.fromPercentage = item.percentage ? item.percentage : 5;
         item.percentage = (item.value - self.options.min) * 100 / (self.options.max - self.options.min);
@@ -216,13 +203,13 @@ RadialProgressChart.prototype.update = function (data) {
 
     var center = self.svg.select("text.rbc-center-text");
 
-    // progress
+
     self.field.select("path.progress")
         .interrupt()
         .transition()
         .duration(self.options.animation.duration)
         .delay(function (d, i) {
-            // delay between each item
+
             return i * self.options.animation.delay;
         })
         .ease("elastic")
@@ -234,7 +221,7 @@ RadialProgressChart.prototype.update = function (data) {
             };
         })
         .tween("center", function (item) {
-            // Execute callbacks on each line
+
             if (self.options.center) {
                 var interpolate = self.options.round ? d3.interpolateRound : d3.interpolateNumber;
                 var interpolator = interpolate(item.previousValue || 0, item.value);
@@ -271,17 +258,12 @@ RadialProgressChart.prototype.update = function (data) {
         });
 };
 
-/**
- * Remove svg and clean some references
- */
 RadialProgressChart.prototype.destroy = function () {
     this.svg.remove();
     delete this.svg;
 };
 
-/**
- * Detach and normalize user's options input.
- */
+
 RadialProgressChart.normalizeOptions = function (options) {
     if (!options || typeof options !== 'object') {
         options = {};
@@ -311,7 +293,7 @@ RadialProgressChart.normalizeOptions = function (options) {
     for (var i = 0, length = _options.series.length; i < length; i++) {
         var item = options.series[i];
 
-        // convert number to object
+     
         if (typeof item === 'number') {
             item = { value: item };
         }
@@ -327,29 +309,7 @@ RadialProgressChart.normalizeOptions = function (options) {
     return _options;
 };
 
-/**
- * Normalize different notations of color property
- *
- * @param {String|Array|Object} color
- * @example '#fe08b5'
- * @example { solid: '#fe08b5', background: '#000000' }
- * @example ['#000000', '#ff0000']
- * @example {
-                linearGradient: { x1: '0%', y1: '100%', x2: '50%', y2: '0%'},
-                stops: [
-                  {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
-                  {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
-                ]
-              }
- * @example {
-                radialGradient: {cx: '60', cy: '60', r: '50'},
-                stops: [
-                  {offset: '0%', 'stop-color': '#fe08b5', 'stop-opacity': 1},
-                  {offset: '100%', 'stop-color': '#ff1410', 'stop-opacity': 1}
-                ]
-              }
- *
- */
+
 RadialProgressChart.normalizeColor = function (color, defaultColorsIterator) {
 
     if (!color) {
@@ -364,21 +324,19 @@ RadialProgressChart.normalizeColor = function (color, defaultColorsIterator) {
         }
     }
 
-    // Validate interpolate syntax
     if (color.interpolate) {
         if (color.interpolate.length !== 2) {
             throw new Error('interpolate array should contain two colors');
         }
     }
 
-    // Validate gradient syntax
     if (color.linearGradient || color.radialGradient) {
         if (!color.stops || !Array.isArray(color.stops) || color.stops.length !== 2) {
             throw new Error('gradient syntax is malformed');
         }
     }
 
-    // Set background when is not provided
+
     if (!color.background) {
         if (color.solid) {
             color.background = color.solid;
@@ -394,29 +352,21 @@ RadialProgressChart.normalizeColor = function (color, defaultColorsIterator) {
 };
 
 
-/**
- * Normalize different notations of center property
- *
- * @param {String|Array|Function|Object} center
- * @example 'foo bar'
- * @example { content: 'foo bar', x: 10, y: 4 }
- * @example function(value, index, item) {}
- * @example ['foo bar', function(value, index, item) {}]
- */
+
 RadialProgressChart.normalizeCenter = function (center) {
     if (!center) return null;
 
-    // Convert to object notation
+
     if (center.constructor !== Object) {
         center = { content: center };
     }
 
-    // Defaults
+
     center.content = center.content || [];
     center.x = center.x || 0;
     center.y = center.y || 0;
 
-    // Convert content to array notation
+
     if (!Array.isArray(center.content)) {
         center.content = [center.content];
     }
@@ -424,7 +374,7 @@ RadialProgressChart.normalizeCenter = function (center) {
     return center;
 };
 
-// Linear or Radial Gradient internal object
+
 RadialProgressChart.Gradient = (function () {
     function Gradient() {
     }
@@ -447,7 +397,7 @@ RadialProgressChart.Gradient = (function () {
     return Gradient;
 })();
 
-// Default colors iterator
+
 RadialProgressChart.ColorsIterator = (function () {
 
     ColorsIterator.DEFAULT_COLORS = ["#1ad5de", "#a0ff03", "#e90b3a", '#ff9500', '#007aff', '#ffcc00', '#5856d6', '#8e8e93'];
@@ -468,5 +418,5 @@ RadialProgressChart.ColorsIterator = (function () {
 })();
 
 
-// Export RadialProgressChart object
-if (typeof module !== "undefined") module.exports = RadialProgressChart;// JavaScript source code
+
+if (typeof module !== "undefined") module.exports = RadialProgressChart;
