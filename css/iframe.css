@@ -8,6 +8,10 @@
     cursor: url(../css/images/cursor.png), auto;
 }
 
+.inner_container{
+    display: inline-block;
+}
+
 .container {
     display: flex;
     width: 100%;
@@ -18,16 +22,7 @@
     margin-top: 30px;
 }
 
-.left, .right {
-    display: inline-block;
-    margin: 7px;
-}
 
-.right {
-    text-align: right;
-    position: absolute;
-    right: 0px;
-}
 /*scroll bar*/
 ::-webkit-scrollbar {
     width: 13px;
@@ -65,13 +60,13 @@
 
 .title {
     color: #A2A2A2;
+    font-size:16px;
     margin: 5px;
-    font-size:14px;
 }
 
 .font_title {
-    font-weight: bold;
     color: #888888;
+    font-size:15px;
 }
 
 .font_title:hover{
@@ -81,4 +76,9 @@
 
 a:hover, a:focus {
     cursor: url(./images/cursor_hover.png), auto;
+}
+
+hr.white {
+    width: 100%;
+    border-top: 1px dotted #707070;
 }
