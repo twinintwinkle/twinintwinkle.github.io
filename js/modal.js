@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 container[j].classList.add("is-blurred");
                 document.getElementById("body").classList.add("modal-open");
                 modal.classList.add("showModal");
-                var current_id = "./showcase/" + this.id + ".html";
+                var current_id = "./" + this.id + ".html";
                 document.getElementById("iframe").src = current_id;
             }
         }
