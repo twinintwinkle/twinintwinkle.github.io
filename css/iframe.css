@@ -85,6 +85,7 @@
 .font_title {
     color: #888888;
     font-size:15px;
+    display:inline-block;
 }
 
 .font_title:hover{
