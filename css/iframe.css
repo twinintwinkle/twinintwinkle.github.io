@@ -126,3 +126,49 @@ p.intro {
 }
 
 
+
+.tools_tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tools_tooltip img{
+    margin:5px; 
+    max-width: 30px; 
+    height: auto;
+}
+
+    .tools_tooltip .tools_tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 110%;
+        font-size: 12px;
+    }
+
+        .tools_tooltip .tools_tooltiptext::after {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            right: 100%; /* To the left of the tooltip */
+            margin-top: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent black transparent transparent;
+        }
+
+    .tools_tooltip:hover .tools_tooltiptext {
+        visibility: visible;
+    }
+
+video {
+    width: 100%;
+    height: auto;
+}
