@@ -8,18 +8,35 @@
     cursor: url(../css/images/cursor.png), auto;
 }
 
-.inner_container{
-    display: inline-block;
+.inner_container {
+    display: block;
+    text-align: left;
+    align-items: left;
+    width: 100%;
+}
+
+.left_container {
+    display: block;
+    text-align: left;
+    align-items: left;
+    width: 100%;
 }
 
 .container {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
     overflow: hidden;
+    margin: auto;
+    width: 100%;
+    display: block;
+    margin-top: 40px;
+}
+
+.vertical {
+    border-left: 1px solid #5C5A5E;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
     margin: 10px;
-    margin-top: 30px;
 }
 
 
@@ -62,6 +79,7 @@
     color: #A2A2A2;
     font-size:16px;
     margin: 5px;
+    display: inline-block;
 }
 
 .font_title {
@@ -82,3 +100,28 @@ hr.white {
     width: 100%;
     border-top: 1px dotted #707070;
 }
+
+p.intro {
+    color: #81807A;
+    font-size: 13px;
+}
+
+.bigtitle {
+    color: #fff;
+    font-size: 22px;
+    font-weight:bold;
+}
+
+@keyframes rotate {
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+
