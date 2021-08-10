@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById("body").classList.add("modal-open");
                 modal.classList.add("showModal");
                 var current_id = "./" + this.id + ".html";
-                console.log(current_id);
                 document.getElementById("iframe").src = current_id;
             }
         }
